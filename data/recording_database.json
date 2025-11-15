@@ -230,11 +230,6 @@
         "transcription": "Day 3 flu. Heavy fatigue. Just resting. Knee feels fine while staying still."
     },
     {
-        "entry_id": 47,
-        "recording_date": "2025-07-15T11:23:22.551909",
-        "transcription": "Day 4 flu. Bad headache. No knee pain."
-    },
-    {
         "entry_id": 48,
         "recording_date": "2025-07-16T10:31:41.993110",
         "transcription": "Day 5 flu. Very tired. Knee continues to stay silent."
@@ -498,10 +493,5 @@
         "entry_id": 100,
         "recording_date": "2025-11-13T15:48:33.119221",
         "transcription": "Cold day. Back slightly stiff. Knee still perfect since July, which feels great."
-    },
-    {
-        "entry_id": 101,
-        "recording_date": "2025-11-15T14:37:14.259574",
-        "transcription": "Edit now quick check quick check"
     }
 ]
