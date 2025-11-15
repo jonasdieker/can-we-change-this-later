@@ -1,0 +1,15 @@
+symptom_id,recording_id,symptom_group,symptom_description,symptom_intensity
+05c9fc0cc352d6fdc696d050b4fcd92371a1a1bb092e4bc300956d8756080bbd,10001,hamstrings,overtrained hamstrings from abrupt trailrunning and swimming,6
+0cc5016b19431bde305cec80f27e91b787dd4cd002d8640a2866304aad6c9d9f,10001,knee,acute right knee pain after carrying 10kg downhill with difficulty walking,7
+9e0020579a5b7387a115519e614c6adf06464eae44f7585a088207c9306f716f,10001,knee,left knee pain developing during continued light sports,5
+8a8ba955944921db52372a1f1024b8d91c5cb8ed9aee519f53acb63c169dd1bb,10002,hamstrings,muscle knots in back of thighs during rest period,4
+1464c379c65320cc3056c165b16b2eecf0d98a8a87d4f6fabe054155269d7d89,10003,none,no significant pain while walking and biking moderately,0
+43a2a52ecc4fb38e852f820ce8c3e3104b2f7745dba6260be5585e507049b24e,10004,knee,bilateral knee pain worse with heavy shoes and twisting,7
+ac4351ff872d9823085f4453c74dcbea1e498b9d4e01ff3191519656bdce0138,10004,hamstrings,hamstring tightness limiting walking to about 10km,6
+f4f496c385b275be6ec1c5e97aae620133d4d38de4e5889c0e17f9ff7d506b1c,10005,knee,knee pain on top of knee when thighs are loaded,7
+7f91000d1cd170ea8e269b8beeb8cb345733f76cebf3ff09b3d2c43c692ddea1,10005,feet,flat feet diagnosed as contributing to knee pain,0
+27597e7afa8c7dbce86111e49f66b317898b4219a75a5e5e4a387c512698f3b1,10006,legs,O-shaped legs noted as structural issue,0
+6d4cbc77d59bfd51c2ebe6f5b0fca67157cbde9468bad980d7bb2b12973052b7,10007,knee,right knee pain worse than left with pain on top and behind knee,8
+3acf7b42de69db00cad3b2719caa0aa8516e95138df41b3fe8c8561f1e0ad705,10007,knee,knee pain triggered after weight loading or running but not during movement,7
+1f6e93447acedff054d8f0196b0ed07f2241f672b3679bdffc666c6f5bda9c42,10007,knee,knee pain described as bones grinding or long intense pain,8
+683fd8a5a5ebc51b6fb81b22acc9fed1c7e76c9b4386bf89aa39b9c8ef620a4e,10008,knee,suspected right inner meniscus lesion,7
