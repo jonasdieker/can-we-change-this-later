@@ -39,13 +39,9 @@ def compute_symptom_id(row):
     return hashlib.sha256(s.encode()).hexdigest()
 
 
-def symptom_transformer(input_path: str, api_key: str) -> pd.DataFrame:
+def symptom_transformer(raw_json: pd.DataFrame, api_key: str) -> pd.DataFrame:
     """Transform raw symptom JSON into a CSV database using an OpenAI model."""
     client = OpenAI(api_key=api_key)
-
-    # Load JSON data
-    with open(input_path, "r", encoding="utf-8") as f:
-        raw_json = json.load(f)
 
     # Ask model for CSV
     response = client.chat.completions.create(
@@ -67,6 +63,7 @@ def symptom_transformer(input_path: str, api_key: str) -> pd.DataFrame:
     df["symptom_id"] = df.apply(compute_symptom_id, axis=1) 
     print(df.head())
     return df
+
 
 if __name__ == "__main__":
     symptom_transformer()

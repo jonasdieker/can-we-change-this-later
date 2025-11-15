@@ -78,12 +78,13 @@ See [Installation_instructions.md](Installation_instructions.md) for detailed se
 1. **Clone the repository**
    ```bash
    git clone https://github.com/jonasdieker/can-we-change-this-later.git
-   cd NucleateHackathonGit
+   cd we-can-change-this-later
    ```
 
 2. **Set up backend**
    ```bash
-   source enf_hackathon/bin/activate
+   python3 -m venv env
+   source env/bin/activate
    pip install -r requirements.txt
    ```
 

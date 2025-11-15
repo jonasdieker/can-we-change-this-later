@@ -3,18 +3,17 @@ from pathlib import Path
 
 import pandas as pd
 from flask import Flask, jsonify, request
+from flask_cors import CORS
 
 from backend.services.speech_to_text import SimpleOpenAIWhisper
 from backend.services.summarizer import Summarizer
 from backend.services.symptom_populator import symptom_transformer
-from backend.utils import (get_patient_record, load_config,
-                           write_patient_record, write_symptoms, get_symptoms)
-
-from flask_cors import CORS
+from backend.utils import (get_patient_record, get_symptoms, load_config,
+                           write_patient_record, write_symptoms)
 
 app = Flask(__name__)
 
-CORS(app)
+CORS(app, origins=["http://127.0.0.1:5500"])
 
 # Global whisper instance
 tts = None
@@ -92,8 +91,12 @@ def stop_recording_entry():
 
             len_diff = len(patient_record) - len(get_symptoms("data/symptoms_database.csv"))
 
-            symptoms = symptom_transformer(patient_record[-len_diff:], api_key=load_config("config.yaml").get("openai_key"))
-            combined_symptoms = pd.concat([get_symptoms("data/symptoms_database.csv"), symptoms], ignore_index=True)
+            start_idx = max(0, len(patient_record) - len_diff)
+            symptoms = symptom_transformer(patient_record[start_idx:], api_key=load_config("config.yaml").get("openai_key"))
+            if start_idx == 0:
+                combined_symptoms = pd.concat([get_symptoms("data/symptoms_database.csv"), symptoms], ignore_index=True)
+            else:
+                combined_symptoms = symptoms
             write_symptoms("data/symptoms_database.csv", combined_symptoms)
             return jsonify(result), 200
         else:

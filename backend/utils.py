@@ -26,6 +26,11 @@ def write_symptoms(file: str, data: pd.DataFrame) -> None:
     with open(file, "w") as f:
         data.to_csv(file, index=False)
 
-def get_symptoms(file: str) -> pd.DataFrame:
-    return pd.read_csv(file)
 
+def get_symptoms(file: str) -> pd.DataFrame:
+    try:
+        df = pd.read_csv(file)
+    except pd.errors.EmptyDataError:
+        print("File is empty. Returning an empty DataFrame.")
+        return pd.DataFrame()  # empty dataset
+    return df
