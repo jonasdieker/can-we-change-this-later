@@ -1,4 +1,3 @@
-transformers
-torch
-scipy
 sounddevice
+Flask
+openai
