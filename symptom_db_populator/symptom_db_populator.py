@@ -40,8 +40,8 @@ def compute_symptom_id(row):
     return hashlib.sha256(s.encode()).hexdigest()
 
 
-def main():
-    # Fixed input + config paths
+def symptom_transformer():
+    """Transform raw symptom JSON into a CSV database using an OpenAI model."""
     input_path = os.path.join("..", "data", "recording_database.json")
     config_path = os.path.join("..", "config.yaml")
 
@@ -61,7 +61,7 @@ def main():
 
     # Ask model for CSV
     response = client.chat.completions.create(
-        model="gpt-4o-mini",
+        model="gpt-5.1",
         temperature=0.0,
         messages=[
             {"role": "system", "content": "You output CSV only."},
@@ -81,7 +81,6 @@ def main():
     # Ensure ./output exists
     os.makedirs("output", exist_ok=True)
 
-    # Save final CSV
     out_path = "output/symptom_database.csv"
     df.to_csv(out_path, index=False)
 
@@ -89,4 +88,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    symptom_transformer()
