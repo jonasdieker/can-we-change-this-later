@@ -107,6 +107,11 @@
           </div>
         </header>
 
+        <!-- Hidden elements required by JavaScript -->
+        <span id="summary-instruction" class="hidden"></span>
+        <span id="summary-selected-group" class="hidden"></span>
+        <span id="summary-csv-status" class="hidden"></span>
+
         <div class="summary-actions-row">
           <button id="btn-summary-voice" class="secondary-circle-btn voice-btn">
             <img src="assets/icons/walnut.svg" alt="Record summary instruction" class="circle-btn-icon walnut-icon" />
@@ -119,7 +124,6 @@
         </div>
 
         <section class="card summary-output-card">
-          <h3 class="card-title">Summary</h3>
           <div id="summary-html" class="summary-html">
             <p class="placeholder">No summary yet. Record or type an instruction to generate one.</p>
           </div>

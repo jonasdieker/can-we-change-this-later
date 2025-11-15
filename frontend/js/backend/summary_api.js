@@ -13,7 +13,7 @@ export async function stopRecordingSummary() {
   const res = await hitEndpoint('http://127.0.0.1:5000/api/stop-recording-summary', {
     timestamp: new Date().toISOString(),
   });
-  return typeof res === 'string' ? res : res.html || '';
+  return typeof res === 'string' ? res : res.summary || res.html || '';
 }
 
 /**
@@ -25,5 +25,5 @@ export async function sendTextSummary(text) {
     instruction: text,
     timestamp: new Date().toISOString(),
   });
-  return typeof res === 'string' ? res : res.html || '';
+  return typeof res === 'string' ? res : res.summary || res.html || '';
 }

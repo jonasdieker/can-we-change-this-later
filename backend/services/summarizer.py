@@ -18,6 +18,7 @@ class Summarizer:
             "You will be provided with the self-reported symptoms of a patient.\n\n"
             "Each entry has a date and the transcribed text of their recording.\n\n"
             "Summarize the following text in HTML format with headings and bullet points:\n\n"
+            "Make consecutive headings smaller.\n\n"
             "DO NOT respond with anything else other than HTML.\n\n"
             f"{text}\n\n"
             "Summary:"

@@ -166,6 +166,31 @@
   height: auto;
 }
 
+.summary-context {
+  margin: 1rem 0 0.8rem;
+  padding: 0.7rem 1rem;
+  background: rgba(232, 220, 194, 0.15);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(160, 124, 75, 0.12);
+}
+
+.context-item {
+  margin: 0.35rem 0;
+  font-size: 0.85rem;
+  color: var(--text-main);
+}
+
+.context-item strong {
+  color: var(--text-muted);
+  font-weight: 500;
+  font-size: 0.8rem;
+}
+
+.context-item .empty {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
 .summary-actions-row {
   display: flex;
   gap: 1rem;

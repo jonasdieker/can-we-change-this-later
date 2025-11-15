@@ -110,12 +110,16 @@ def stop_recording_summary():
         
         if result["status"] == "success":
             assert Path("data/symptoms_database.csv").exists(), "Symptoms database file not found."
+            print("Getting summarizer instance...")
             summarizer_instance = get_summarizer()
-            result["summary"] = summarizer_instance.summarize(result["transcription"], patient_record=get_patient_record("data/symptoms_database.csv"))
+            print("summarizing...")
+            result["summary"] = summarizer_instance.summarize(result["transcription"], patient_record=get_symptoms("data/symptoms_database.csv"))
+            print("summarized worked...")
             return jsonify(result), 200
         else:
             return jsonify(result), 400
     except Exception as e:
+        print(result)
         return jsonify({"status": "error", "message": str(e)}), 500
     
 @app.route('/api/text-summary', methods=['GET'])
