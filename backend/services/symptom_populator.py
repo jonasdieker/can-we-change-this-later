@@ -1,16 +1,13 @@
 
 # Minimal CSV generator using pandas and OpenAI
 
-import os
-import json
 import hashlib
 import io
+import json
 import re
-import sys
-import yaml
+
 import pandas as pd
 from openai import OpenAI
-
 
 PROMPT = """
 I will upload a JSON file with symptom recordings.
@@ -40,30 +37,12 @@ def compute_symptom_id(row):
     return hashlib.sha256(s.encode()).hexdigest()
 
 
-def symptom_transformer():
+def symptom_transformer(input_path: str, api_key: str) -> pd.DataFrame:
     """Transform raw symptom JSON into a CSV database using an OpenAI model."""
-    input_path = os.path.join("data", "recording_database.json")
-    config_path = os.path.join("config.yaml")
-    # recursively search for config.yaml if not found
-    while not os.path.isfile(config_path):
-        parent = os.path.dirname(os.path.dirname(config_path))
-        if parent == os.path.dirname(config_path):
-            print("config.yaml not found.", file=sys.stderr)
-            sys.exit(1)
-        config_path = os.path.join(parent, "config.yaml")
-
-    # Load OpenAI API key
-    try:
-        with open(config_path) as f:
-            api_key = yaml.safe_load(f)["openai_api_key"]
-    except Exception:
-        print("config.yaml missing or invalid.", file=sys.stderr)
-        sys.exit(1)
-
     client = OpenAI(api_key=api_key)
 
     # Load JSON data
-    with open(input_path, encoding="utf-8") as f:
+    with open(input_path, "r", encoding="utf-8") as f:
         raw_json = json.load(f)
 
     # Ask model for CSV
@@ -84,15 +63,7 @@ def symptom_transformer():
 
     # Compute symptom_id
     df["symptom_id"] = df.apply(compute_symptom_id, axis=1)
-
-    # Ensure ./output exists
-    os.makedirs("output", exist_ok=True)
-
-    out_path = "output/symptom_database.csv"
-    df.to_csv(out_path, index=False)
-
-    print(f"Done: {out_path}")
-
+    return df
 
 if __name__ == "__main__":
     symptom_transformer()
