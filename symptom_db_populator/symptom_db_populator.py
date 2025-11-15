@@ -1,4 +1,4 @@
-# symptom_processor_minimal.py
+
 # Minimal CSV generator using pandas and OpenAI
 
 import os
@@ -42,8 +42,15 @@ def compute_symptom_id(row):
 
 def symptom_transformer():
     """Transform raw symptom JSON into a CSV database using an OpenAI model."""
-    input_path = os.path.join("..", "data", "recording_database.json")
-    config_path = os.path.join("..", "config.yaml")
+    input_path = os.path.join("data", "recording_database.json")
+    config_path = os.path.join("config.yaml")
+    # recursively search for config.yaml if not found
+    while not os.path.isfile(config_path):
+        parent = os.path.dirname(os.path.dirname(config_path))
+        if parent == os.path.dirname(config_path):
+            print("config.yaml not found.", file=sys.stderr)
+            sys.exit(1)
+        config_path = os.path.join(parent, "config.yaml")
 
     # Load OpenAI API key
     try:
