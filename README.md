@@ -240,7 +240,7 @@ This project was created for the Nucleate Hackathon. See repository for license 
 
 ## Acknowledgments
 
-- Built for the Nucleate Hackathon 2025
+- Built for the Nucleate Hackathon Nov 2025
 - Powered by OpenAI (Whisper & GPT-4)
 - Visualization by Plotly.js
 - Icons and design inspired by warm, accessible healthcare UX
