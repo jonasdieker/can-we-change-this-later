@@ -1,102 +1,102 @@
 symptom_id,recording_id,recording_date,symptom_group,symptom_description,symptom_intensity
-c8f0def2f5478053bc5a86e8b4e02eb0e1bb83e9225435bb5b3291d5b3b378ff,1,2025-03-02,knee,no knee symptoms,0
-6821022639753c21bd03481929988565f8814c7f67e04a885cc824a36dfe2f9a,2,2025-03-05,knee,knee a bit stiff after sitting,3
-975df6ee7294622b96fc975c173e6807b8872c27a281254a56923b348f6b96a6,3,2025-03-08,knee,slight inner knee soreness downhill,3
-40cf40d5dfc7d0e0b4358f91a595f8c6820dca80df9176956daf938ca676e01b,4,2025-03-09,knee,brief sharp knee pain episode,5
-0887a55e742819dbb499b3b740191fd0d8c4f3225a118a1097a6038cb0683d87,5,2025-03-13,knee,knee discomfort bending past 90 degrees,4
-8d18ae3ed092f8dece9a5e20b8db0485ed5813571ee03496e4a129b30b05a37d,6,2025-03-16,knee,knee flare toward end of hike,5
-d82a8238bb6741803ca6bb2d4fa54703f622c9ab896ba44994de9ef1846285b3,7,2025-03-20,knee,increased knee pain with swelling,6
-85be5866699329d3ef31d824eac36fd14f766f564e9c057c16659c5ed612d8d6,8,2025-03-22,knee,knee pain with twisting,4
-c4eecae4fcaa0dc28dc72a563f10cd9f011d53f06c76fae99a048cbd5286749f,9,2025-03-27,systemic,headache and chills,6
-8abbeeb6e7bacaddf4f7d500f88cf2463aabc581405e376def5cae879748c02c,10,2025-03-29,systemic,flu with reduced activity,7
-fd41b7461d34bf15b15a96c04634ffddf36fa2c917d2de2ffc8cdc9ddd1f8087,11,2025-04-01,systemic,fever and sore throat,7
-34a423f290faa950a79b4a9e8fb88bae563231ea529b831b2cfbeefa638a3b02,12,2025-04-04,systemic,prolonged flu symptoms,6
-74403deef8ceda1c297af75a78b8aaf6dba65df3993b0b135f82981463399f21,13,2025-04-06,knee,knee pain-free during flu recovery,0
-6133d2620ae4e04f35e339a769250b24487a2d3f77c7e0bced325c74649a0cb7,14,2025-04-10,knee,knee tight but not painful on walk,2
-e35e7408f0596f87d926800a30e7b93fca43f3d2d187e144800fcd0002effe3d,15,2025-04-13,back,back pain from desk work,5
-2b879aa18d94b7f91fb068cff19e957d196cff50328fb0addc753027f563d4b7,16,2025-04-17,knee,mild knee hesitation on descents,2
-2ee4ffdb091f0f088388bc3cc534f16deebd599d7123b0e5975c7e5ba93f1af0,17,2025-04-22,knee,knee stable on stronger hike,1
-bcb456bdfbf8505a298a636a79e1419d0075e18c0a8f3229895c00d4b845e0f7,18,2025-04-25,knee,brief knee pain after twist,3
-b2b4a9f8d04ef70f80525f50ea0bff7018aaa1e140631db85c608b1aa8837080,19,2025-04-29,back,back pain spike from desk time,6
-f4dd481a24a870316c447fca4b86df93c2eb07fdb6453c7f27eb1d745da8dfb7,20,2025-05-03,knee,knee pop without pain,1
-78265ce3e6a8b41410a33aa50768da2e0355a42c43411a35a4ec2e8eb01fcf29,21,2025-05-04,knee,no knee symptoms,0
-0d9f7b0d4e7e4f14c84752ce185796474cd5d51450b42ccc12d1dcdbda8143e7,22,2025-05-09,knee,knee mostly normal on hike,1
-8e6e376df12a0e3737804ae7e313b23c4ee310c61e077671d84bddb3e7734172,23,2025-05-12,knee,morning knee stiffness improving with movement,2
-c298ab111772c14fec9a35746d1cdfe0b301fe8435d6a2ca569169265a022299,24,2025-05-15,back,back pain day,5
-55b715d3de1ee6b4ef80f555058ef092d364f622cd6dc9e881d8e9d187bfb014,25,2025-05-19,knee,knee absolutely okay on long hike,0
-4ba9e2086e2c250480f351c9b16e77c2262f5815315735752536e140904a2d2f,26,2025-05-25,knee,knee pressure with deep bend,3
-679e7dea547245ff288883401091af7828a81c81d554fe6ea509c6fdb81705b2,27,2025-05-30,knee,no knee symptoms,0
-e0e993e21cdb9a7a5967af1132062f70aa267f3ee304541f584f60e09c71a306,28,2025-06-03,back,back pain from posture,5
-845fca7120a92a972fb4c5887794bdcb483a8aedb39fb06ddfe0c869ecb74b19,29,2025-06-07,knee,knee barely noticeable,1
-90a3b4799c505e59e93e268324ddf62c201bb557f7596c82c21bb786fe4d3420,30,2025-06-11,knee,no knee symptoms,0
-e191ec9f0d42f3369ef8e6835e814edb980b7c051375cee8fb33146663b2ad52,31,2025-06-15,knee,knee click without pain,1
-0586ec135b65af27670a72030fc5eff682860b95d84b2c8ce4dbc2d83fa35164,32,2025-06-20,knee,slight knee swelling from heat,2
-24cce80886eac4883ead7605c0e6bf25412ef3d75235eed524bc54fa89b0e3d6,33,2025-06-24,back,back stiffness,3
-5796d8ebb17a26ca6c7a25a2d3db98cbeeacc79cd6eb1a6355743d7954933cc5,34,2025-06-27,knee,knee performed great on long hike,0
-1b3436ca15a1d2816da57f03610aad04ebb00348640d46a9a395899a45b3ca9e,35,2025-06-29,systemic,mild muscle soreness,2
-e890735a47269dc91d798d427354dcc5f83f61b2e5fc2f07eaa1180e30e76595,36,2025-07-03,knee,no knee symptoms,0
-3fa5dfc60222be9e1b4c6485a74444202efe07c07b4635ae9c3c86562f584da6,37,2025-07-07,back,back pain lifting groceries,6
-442908c42f42af2fade87339311fcd474c1cad78733ae6b019554dad0b697084,38,2025-07-11,knee,knee fine on evening hike,0
-65e738e93bd142f82f81c68835fd8bd2cee695a8f7093e0ec51b70586e24359c,39,2025-07-16,knee,tiny knee discomfort after sideways step,2
-523f9a0f2ad34f9ba96d78b8abfd4f82467d5e013e4bfc53a7c1704435e2ac5f,40,2025-07-20,knee,no knee symptoms,0
-789eff0bdaa4f246a993559a4494800942672938eef1475119ad6368de2964b1,41,2025-07-25,back,back pain day,5
-812c2b3f851eaca427ba4405ffe40c6c1a331f14248332bceb4e02e0b968cfe7,42,2025-07-29,knee,knee felt strong on bike trip,0
-013fb612a18e18dc4c2da7541413fd1db206ffd8bd45133e57378f8a91719e04,43,2025-08-02,knee,no knee symptoms,0
-c65799dca8fd877df902641c1f63b812b5f988759f25208ab0c337b03f8c3727,44,2025-08-06,knee,knee pressure when crouching,2
-3d94d51f6314086fc7acabe46a45e53ef303ef74a4a1218acc8f7626303fa4d9,45,2025-08-12,back,back pain acting up,5
-e0cc58c9c6e9cd27c4fefc55c1407cab32f53c88c56ddfa45cd8c812d1fb11d6,46,2025-08-18,knee,zero knee trouble walking in town,0
-7e4ed7ab8e13f4d3745efc4164ac83c4a2c2bf9b79ce54c264f6dc734150b06e,47,2025-08-23,abdomen,minor stomach ache,3
-7b3e555b7b3a026162abc49784de8f87c8df739f1ac1fa9755a1f762367821fd,48,2025-08-28,knee,knee click without discomfort,1
-d7caa82a625df1212eec8568b98580fdb2f307f8bef690ce167ac2de5b591f6b,49,2025-09-03,knee,knee stable in cooler weather,1
-3009898b012e9024e2e93fc9d08e99fbabe51d04bad09d52233d7e6030bab344,50,2025-09-08,back,back pain from sleep posture,5
-63cac37635ad9169e423d5b42da8a0ed4d309a9cca224ece8f96b065e0a501e7,51,2025-09-12,knee,knee totally normal on walk,0
-e4f51c1067fe1c9453abd6c451310d5f4205ec2db27123fd92198aed9964e662,52,2025-09-16,knee,knee slightly tight in cold morning,2
-2a31056ac360587c8c5f915802ded0befdb312277cfbfc72473ee179df8aec48,53,2025-09-22,back,back pain spike,6
-f1a8b9a3a129a00195f66cae42d2a24e73f0d8e846e9ca5754575cc115f89caa,54,2025-09-26,knee,zero knee pain on long walk,0
-5b5187a4a93f921f3c856673deb8bcf7cfae8c89cd89a5a56e361f13dae4d17b,55,2025-09-29,systemic,mild headache,3
-3208bf1c8c6c148de388cb00b9a17904ebaba16a823d3bfe7d5258ac36284f70,56,2025-10-02,knee,knee a bit stiff in evening cold,3
-fea2220749700abefbee27ba4f62f65b4be78096306e098c9e39d8e1b7c94ffd,57,2025-10-06,knee,brief warm sensation in knee,1
-903bd06fa31dbbf7a56eb1b4ab00a72c3c2690f5f607111d48692cbdad255cb2,58,2025-10-10,back,back pain from office chair,5
-81aae31c6eddb2f01dc31978a0fbf3733072dc1e1c637eeb75245f3eb25d3bf9,59,2025-10-13,knee,knee totally okay on hike,0
-cb67cc80f233c24d19d9f3f25ec53a85362f6173efa2dc95d41253e156087d43,60,2025-10-17,knee,no knee symptoms,0
-59e44dbefac476ebc43dd59ccde49d7c87dd22824a9882b49ecabf5580a437a6,61,2025-10-20,back,back stiffness,4
-8bfc80d7d34e9c7b2f6edb589078b1a1ababdd3e7f17e7b5c2c76c2c16210b6c,62,2025-10-25,knee,brief knee twinge stepping sideways,2
-60256812df72e1af80f9a61d739b7d5e71442368f5991fa0f4a7b64f92acc821,63,2025-10-30,knee,knee a little stiff in cold rain,2
-08a1efd2c832c29a7d89be2da7c93a323f8febf6913074b8bd3a888ab185af21,64,2025-11-02,back,back pain,5
-e77526cae099d78f035d396cd4d49d1dc0fea0ba84a13bcf4b98bafb1b418189,65,2025-11-05,knee,knee slightly tense in cold morning,2
-63b34b467cd00df3dd6b77eb85d4a69adf9a7016a1e9cad4b8aec69f5a14e431,66,2025-11-07,knee,knee perfectly stable,0
-9684fa81717a56be808fbe0a36fe877d74913dcd164e002e8783cc4a129b0ec9,67,2025-11-09,back,back unhappy from long desk day,5
-84c858937e35d4fe77fc88778bdc1f9bd546a9dff9763f84f4efa9fe1d4796c0,68,2025-11-11,knee,knee pop without pain,1
-006a5f588ff467d22a25bf68464eddced1fe25eb982b504360d76875c9b68e3a,69,2025-11-13,knee,knee slightly stiff in cold,2
-42833b7a5743198cd0eb935debebc2efed099991fc2342086bf054d9817d5921,70,2025-03-03,knee,slight knee soreness after hike,3
-8976b745670cf2d107150d67bdd632923068efa00be0e1594bd6cc530a872aed,71,2025-03-18,knee,knee pain going downstairs,4
-ae6e4165a899d1134d3acdb63ae1fee37e539cd0db9bfdb25f61e1eca9135cfb,72,2025-04-08,knee,no knee symptoms,0
-21899d6c1218f4c77910d01ebb05e059ed7afc59c173bc4a74c008d775137515,73,2025-04-19,knee,slight knee instability turning sharply,2
-68fe56524de00c4de9c251071600657330bce218508448599a6adef512e8d4c1,74,2025-05-01,knee,mild sharp knee pain after jog,4
-44ce6d51ec1e02b054cf1b61a3de6d2ecdcca0c4380fcf0c02fb282b98cd8233,75,2025-05-07,knee,no knee symptoms,0
-4dd3930e39b813416c282fced590175c017dc9503b5a2b9b7dd654d1e53e946b,76,2025-05-28,knee,knee slightly tight after floor sitting,2
-6a64eff76a57ceadce55053e52f47ec7a374e10cf9fe2ea3086aa3bdc0e9ca34,77,2025-06-09,knee,knee feels looser in warmth,1
-58dfaafc9fe973ee6d48903f3caa32458111cbe210aee4141c07b5204183ffb8,78,2025-06-30,knee,zero knee issues on hike,0
-40eb8fb88ba6e99cd828e2ecb6ec235847946d4eec20897a2f8ad1b4135a21aa,79,2025-07-14,abdomen,minor stomach cramps,3
-57f1c083f1f37b5778f06a6d486f830f14e586fe8b36ec7c0d0f4c31ad8bb15e,80,2025-07-22,knee,knee stable on short walk,0
-787ca15d01c4e473f0fa4b05b70ddb4c936c950c47ae3ab3ea2b4e31a522424d,81,2025-08-04,back,back stiffness,4
-0c437a5e021fca90fb0fcd255c65596608caf0055a6b4a073332916023b64446,82,2025-08-21,knee,knee light and painless when swimming,0
-542514d9773685f29033467d3582dbe04124a3d5afc23508561a8918f5c2e88f,83,2025-09-05,knee,knee feels off after cross-legged sitting,2
-e55f09da1674e787015e13113f54eaf02256407e2c156f79f79f5fe41f2716c1,84,2025-09-19,back,rough back pain morning,6
-206b60947e229a9f5c7c9d124a8d7d2be02d791af6084b4b8a41d7c628bf7390,85,2025-10-01,knee,knee a bit stiff in rain,3
-e32dbf4c71671256d26308ce51eef7f14e322287f4d3d1545709007e0e79eb80,86,2025-10-12,knee,knee totally stable on hike,0
-7de97d4d2b387e61adcaae2f33c36b17d1a8321842b58977829b4f64d7319e53,87,2025-10-23,knee,minor knee tension bending down,2
-a7480fd0aa44c36e3da209d0810f112336e78c6fa9863b3f3d3b16749b03be3a,88,2025-10-29,knee,slight stiffness in cold weather,2
-b7dae6a29ac87bb6f2f7175170a25317b090b56e47558298d41707a7bd80600d,89,2025-11-01,knee,no knee pain after lots of walking,0
-3c839b5e0c99ff90bfb65cdff54f44e7964d5f6ccfb756dc520b95d38c91737c,90,2025-11-04,back,back stiffness,4
-560b8b3a990f7a34e427ac8362ea9ee6b218ef70955492a7ecfdcf25d3968552,91,2025-03-11,knee,knee a bit grumpy after hike,3
-7a8fc84457ca0ab1036ecbb01b292120c43a3dddbb1aa271ccc7c962575dc817,92,2025-03-24,systemic,severe flu with widespread pain,8
-4dbe91b71f6ca99001ec130a1b5dcc27cd9198d24611d0af268670f738ffc086,93,2025-04-14,back,back pain from desk work,5
-3feb078303e17db77f27f031bddbd2c5611d7e118e4d033e496b4f661edf4d1a,94,2025-05-10,knee,slight knee tension uphill,2
-7301f45b7ae99629becfef499da112cdf3876344b05f6a323de2f821b01356a9,95,2025-06-05,knee,minor painless knee swelling from heat,1
-d0406ebf439c6c68b17a7c074d4b0802bcab6325080a8d699c47f1ecf3c21241,96,2025-05-09,knee,no knee symptoms,0
-863e5d39912bed78077663e3dbf8182718669b1bd53d15295ba4df50e8daff84,97,2025-07-10,back,back pain lifting box,6
-ef892bce0bd8de88766b935fc94b4faf736bbe58df3590c364e936c85b930e67,98,2025-09-10,knee,knee absolutely fine on walk,0
-4e9cf6725aee2a2edc8e1b1c438ecb7371df7cf5816cc60a4c95b088c6342fa9,99,2025-10-08,knee,knee click without pain,1
-e03eb936e64d491ac1ee4dc5cdb657b46f70add9fcd2cb13368a21f73f512bf1,100,2025-11-13,knee,knee slightly stiff but best all year,2
-96f9b46d76504e4b7ffe2d89a3d5e55041921cf5d20f4b81a584420ab5a4a11a,101,2025-11-15,systemic,no symptoms reported,0
+b53bc6aee3f79b71d8f57fbc14f7f6aa5f462e2da027fefed4c1c7b146350e8d,1,2025-03-02,knee,slight knee stiffness after hike,2
+39dc2a87a67de4ad8911f04a4603d4d9f9c26fd034d21e0cdff9987edcbf154d,2,2025-03-05,knee,knee pain when going downstairs,4
+d4704af3fe53a4ca09e5a868bf0c2539d7b3dce9de02deae3981c3db695a92bc,3,2025-03-08,knee,sharp medial knee pain after downhill hike,7
+3fc8ecec85e0097d976b8d52df17fc507ef328419d931ea3bd61bda43eacadb0,4,2025-03-09,knee,evening knee throbbing after activity,6
+570224072257c8a7a841f33bd40b60e69ae2e66ead5019813b47cbc072f67fe0,5,2025-03-12,knee,knee instability with twisting,6
+dc70729b32914e4f907d256d51b53ae3948d9ea33f180599470dab3d77cd805f,6,2025-03-15,knee,knee irritation after short hike,4
+0ddfd816c82a02e39fa183aafa7b6fdb7fefe3779d00c6db050a36d579f73d96,7,2025-03-18,knee,moderate knee pain on waking,5
+c799d88c36707c33b6dc75d780bc1c52215e2c3c2fbfc146a5f28c9c5e34bb2d,8,2025-03-21,knee,knee sensitivity with deep bending,4
+efd2ec93fe04929d7083e4aef7bae693e5d3c54f384ece5e81a08793b534609b,9,2025-03-26,knee,mild knee discomfort while walking,3
+edee591b0b024a49d548bb06ff58495d116e1204bc8228f57cdad7add03db308,10,2025-03-29,knee,warm knee in the morning,3
+3abad856181da83095c1caf8a34b035973204510d6a7644281087278ce7d32d0,11,2025-04-01,knee,knee pain on downhill hiking,5
+d8965b6d01a5bf4971accb581faee330c1b9d07a44b96f90526a92d62d191273,12,2025-04-03,knee,mild knee irritation,3
+c3d36031579a005325f577cc233ac836fddbf081698cf41a0939c02729e213a3,13,2025-04-06,knee,transient knee swelling,4
+8a5e6f6f525a5742ac7c9fe071ac0780a39dcbc1278311ff70fdb8f37f1965da,14,2025-04-10,knee,mild knee stiffness on short walk,2
+72353b3a0ce516854caf3854bca6adfc8109cb96422cb60fee26aad5fba85c70,15,2025-04-13,knee,brief sharp knee pain after twist,6
+812191d928076e3539d28e7b3fa1f1136b1bcb407c52ef4836638fd4e55e504b,16,2025-04-17,knee,knee tightness after long meetings,3
+cea4183da80a659921aa863beafce35ffba3a771619b7056d233909d54b311d5,17,2025-04-20,knee,knee soreness after two hour hike,5
+c85a8f7cf9f23db7978ffd8481d8b1f7d107166e5448d93f9830987cb3d82d40,18,2025-04-23,knee,increased knee clicking,3
+73d899aa78578cb89d9038f8b066558f331c1572a26d9c85ea633ef3d8acd04b,19,2025-04-27,knee,knee irritation after sudden squat,5
+ffa8246ef5fc63b5f64dc33b4e6611f4fa12cbe54016bda2869879519fbfb6b4,20,2025-05-01,knee,sharp knee discomfort during jog,7
+8b96a68290ab82580ce813af70941d34d14a60bd1e341d7fca0b147cd2bc3943,21,2025-05-04,knee,knee tenderness but tolerates walking,3
+2acf2765bde0549a7679260c5c1a6e71f999a26117ed69215869e96389b99adb,22,2025-05-06,knee,knee pressure with deep bending,4
+420e54b720a86b2cff920711fea9f126b5b18705bfdb91daaa0f4fed8b730c14,23,2025-05-09,knee,mild knee irritation after walking,3
+0da72659e009f6aa7577d8ad0239f51cc37f0b104c030d6bc0a1f745ab22e051,24,2025-05-12,back,back tightness from prolonged coding,4
+cad5628da1cb50f659c8fea67c8ab694b29917c64bbef83a5e3caa5970421288,25,2025-05-15,knee,mild knee soreness after hike,3
+a0619e65c38af8d8910630709a7b7f6a9a7b8ef0d9d1c94153bc7d1a79eae09d,26,2025-05-19,knee,reduced knee irritation,2
+e0213f98970477d6b38f612c4718a0e987518b7018854d6d408941564580ef59,27,2025-05-22,knee,knee pressure while bending,4
+66145fb5bbac970f72e3b1477c6c48c061d0117df00d06bb77c34df7ef73752c,28,2025-05-25,back,back pain spike from bad chair,5
+570b5cd65afd24c91a96b91e160c671306e02762198feb87ba62c7bb15fbf3d7,29,2025-05-29,knee,knee clicking without major pain,2
+2a49af9fe7d48878f4480213332d51cf4f5edbdcbb99dc0135ce21dc9fd8afa7,30,2025-06-02,knee,mild knee throbbing after light hike,3
+f297bf0e4748c63ac8203ba50246f3d71ac2a321870bbc459e65d693d109d610,31,2025-06-06,back,annoying back pain,4
+99e0fd7bd0df18c581507fd291cabdeec8b96fdcf9e2f6c4808acb40e31fa82c,32,2025-06-09,knee,knee instability stepping onto curb,5
+0d8c6810db667021f2a8533e1e98704b453da12c95ca106b8f630df4b5632e34,33,2025-06-12,knee,mild knee tightness,2
+6dc364c686ba15cc9bfc1c9d74c7e35901fd5d60a44acbd1a9268d2266ec048d,34,2025-06-15,knee,manageable knee irritation on hike,4
+4e6f9e4ddcb585514e8a2c8bf217d4d46e979e18be0bbfe5b61f374cb881ce0b,35,2025-06-18,knee,warm knee without pain,2
+9e20951cedc6d83e164afccac5f5d12831a85fc6056f2dbcf3e88bf786a62f34,36,2025-06-20,knee,knee irritation with full bend,4
+393e770d78c1428472b14b0a81710cf4dcad716c93f0666d300f21ecb1f2c889,37,2025-06-23,back,slight back tightness,2
+83377af1899a4dbfa853319b93d3be8229eb8ca1fc5983d29b83d7ceb5abc144,38,2025-06-26,knee,knee flare when crouching,6
+aa23f72c9d2045288feae7483d26171bfd8f9ad18ec91c7424e4fd0a343845d5,39,2025-06-29,knee,mild knee stiffness,2
+cb3044ba104d6092ac7171ea6f0d819fa0d9d97564685523473de912732c915d,40,2025-07-01,knee,morning knee stiffness,3
+d510534d7ddbf290bc67e30a4034d29a6e690d3a7f01a5d2b46ead73104bc6f9,41,2025-07-04,knee,slight knee swelling,3
+420b22e00f35ac22cdb24b1efcc32f71694e496172840dfced604a4c3435f4f3,42,2025-07-06,knee,knee irritation on light hike,4
+da92edea1c4250f65cfa73f607d6c12ddaeeabb24fd16f9e2c185466a2b8f1a0,43,2025-07-09,knee,stronger than usual knee pain,6
+0c855d7434e5885f8166bb4561045aa9435f2aee6b2940912964559826a31005,44,2025-07-12,systemic,flu with fever and headache,7
+8943b20dcc98d2627689a0fcdb91ebcb0aad74b8dedcc5b37882d1d577fbdb1f,45,2025-07-13,systemic,flu with severe fatigue,7
+41ad0b0ad92b63a6341fa8139f8025101a340d3e05090890ed2e30a74be561ff,46,2025-07-14,systemic,flu with heavy fatigue,7
+9d41e3437e1ef25c85acff9ff83611c51748d79d3c1a64ec8a186aed5415de27,47,2025-07-15,head,flu with bad headache,6
+91f27ee21557a0121aa8337b4fa70a7393d27dce90ff629565ff8041851b4f3c,48,2025-07-16,systemic,flu with marked tiredness,6
+4de9e36f1d0d79e788894e4f5811f9d3dfcb86e6485416a6c6aaa96cebe26a49,49,2025-07-17,systemic,persistent flu with fatigue,6
+e98170c595d2486b1dee54f78efc5317b624f77007e79b328d0f595b7ce1064a,50,2025-07-18,systemic,improving flu with residual fatigue,4
+c229796238939fed01ed6b0aceacb3d2f68f9fe108297c964d0e62cf8700b3b2,51,2025-07-20,knee,absence of knee pain post flu,0
+a455c9c3f651229d19b859c82e0b51896d23e3d7cabfdd9021f08253d37aeb9f,52,2025-07-24,back,back pain after returning to work,4
+f402035d5a581997114019bea477f4147d80ef936c3db0e2eeb98507e55814fb,53,2025-07-29,knee,no knee pain despite long walking,0
+45a2fc27564df77f96ab9b8ec9aa96a65df426e9de46851f116ad292e3635968,54,2025-08-02,back,mild back tightness,2
+d4cc551b9ae8623c377a4c25389791cd204586207f4747c2cab519824ca3421b,55,2025-08-06,knee,knee stable without issues,0
+0ea609f45498c616eecad9dbaaf40ed8c30fdb6d7aaa41038283995c7e7ee4f2,56,2025-08-10,back,back pain flare after lifting,6
+f61f5cc3d43f6abaddcf5848b12845d6f69aca4e851c97b08f5569e68c1da306,57,2025-08-14,knee,knee calm on evening walk,0
+db1d954fe367ec4cd66d9521eef28620b67cab0d8289a993cfdc648fa5b13fec,58,2025-08-18,mental,work related stress,5
+e834d7d9747cb77855c336bdf9731705f9a7e6b0f1e9b0ed20532902186bef53,59,2025-08-23,back,back soreness from long sitting,4
+7d89636b6fcab36554ec7688736644c2c7b159ed769c362530d0295893c94a3d,60,2025-08-27,back,morning back stiffness,3
+54145b0b75472a9ddb6e28cabeb87d0740c12139889feb0ea08e53406d6ed50a,61,2025-09-01,mental,improved relaxation after walk,2
+c4f832d34b30c53ad6ff96f84b1bbe7af7b7e31fbf57b7e0b4f7703d0b2fa014,62,2025-09-05,back,back tightness after coding,3
+e8cdd1c143b7688ab835a8b541e0688a1179b6805bc4f74413cd74191627a860,63,2025-09-10,mental,mental fogginess on waking,3
+a4b21d71e185ea3ed6c22ced620a9b8c32f6fee0561d0359adda183a8ef73baf,64,2025-09-14,back,back discomfort from poor sitting,3
+59de78c7e8184bdbfc2679737f877ed0a95660a73df6f500cd90b89e4bfa3779,65,2025-09-18,mental,calmer mood after good walk,2
+db1a4df4fc5fda8d0cc01aa24e3840eeac65ab42fc6ab0257f0a5052fe9b0872,66,2025-09-22,back,slight back pain,2
+f299878f8265f56e0156aed706dd2bec17fcaa717c58ced5775df3571f33c8c9,67,2025-09-26,mental,feeling run down,3
+e99ef373506d9edd196ea5eb0b622f9a29549f717ad4d5a303f22ca02919ade2,68,2025-09-30,back,back mostly pain free,1
+78c3cc30a524135a86a4223b988c185ec96480a59f55c0fe1649d346b6dc9d28,69,2025-10-03,back,morning back stiffness in cold,3
+2001d7323375a0758dc9dd8f4596cc2f1b3068e0e6ede739fc95dd1521c6ec17,70,2025-10-06,mental,mental fatigue after long tasks,4
+546ae23a3762fb774327a125caf5d6495d7ed507070c2aa5818b77bd26a974c3,71,2025-10-09,back,mild back stiffness,2
+d7a5bf2c3663c688f0fd2a4138849b3939d0aaae143b903d72e266d338b9e611,72,2025-10-12,mental,brain fog after poor sleep,3
+2481fe716e9e54bd994d684a115462261714ad3f1b11332ed99913fbd070ec69,73,2025-10-15,systemic,feeling physically well after long walk,1
+024843035fc6363406c010ea9e0d7bb42277651b5fc5b714718049cff069f901,74,2025-10-18,back,back pain with work stress,4
+0c977f1f357cfc41d7b6ae811a40e45b2dbf04a1b7fdd2a106d13c3cee2ad6e8,75,2025-10-21,mental,marked mental tiredness,4
+71d1d20b6b29227499102e99ff42a64606c28b925290651f6f0547acb28a3356,76,2025-10-24,back,back stiffness from prolonged sitting,3
+c9b5648000dcf72a2d13ec398c6fe61ede82a86752e979f522a256ef72ee7866,77,2025-10-27,knee,no knee issues on evening walk,0
+56fd02faea7697bc4c1444d9f4df0187ee32fbaf7a059e98ddd69a71d8006ec2,78,2025-10-29,back,mild back tightness in cold,2
+adbe068e47ecfdcfa0d0cf4cc89a020593cdd556ef05c058f51c06e851644fe8,79,2025-10-31,mental,slight burnout feeling,3
+ed802bdd38a6aa30e20fb617fa84496581bdc5505364c71e89bd7416987ded3f,80,2025-11-02,back,back pain after long coding,4
+0790794fa0ef795747fb3f840dc82e9c91af2945f34b28868762659aa2f066f8,81,2025-11-04,mental,high stress improved by walking,4
+f7ae4cf5847ddc4e9b01e90ce5978b93c9ff69a268510a6cd1ae288989c3d798,82,2025-11-06,knee,knee consistently pain free,0
+4d9fe6b636f810823f13b35dc66c7f5340d22c5772a35402bac72d7bc35e59ce,83,2025-11-08,mental,slight insomnia with body okay,2
+3250cedad52deb8c2cc6e4bc59008d7d8b175f4e5a41838287b6426f3a510781,84,2025-11-10,back,back stiffness in morning,3
+a714eb58597d2c59b53c5e457f399ee548cafba1c8a5042d47644f6946668b14,85,2025-11-12,back,mild back tightness after work,3
+3527d03eb1628907d89e057ec96939920c5d2bee791aea2328508928b0f97863,86,2025-03-03,knee,extra knee soreness after hike,5
+9dccec703872a7d3c718671d0e0f57e5f4f62891bdac6c83d7126c6be4a21319,87,2025-04-09,knee,mildly irritated but manageable knee,3
+078f7ba958727eea3ae1a5eedff1bc70d05fffc34c02360d8b86447fa912863d,88,2025-05-08,back,back tightness from sitting,3
+0484a8f315bccb7e0f26403a9b90ea59fc607bae8955c8890b06bb39c272e477,89,2025-06-10,knee,knee soreness after misstep,5
+f1b715a964692eac65e835adf7b05f42c651b96dc6416fe030c9d7be8485a881,90,2025-07-02,knee,morning knee stiffness with mental fatigue,3
+b9d5bcb614c8dbd407c0118a4712102708328cd5b9b7d219380e3ac113fd0b17,91,2025-08-04,back,mild back tightness,2
+f629409076fd6c6c7d7bb5a0f4c4bbfbff2b2e4ff80ef89ae8ab775b826ef703,92,2025-08-24,mental,improved mental clarity after walking,2
+757e4723982ef5e4f7d66c16c9084506be11f91dd5b0f656c0bb9c6c8a4c1341,93,2025-09-11,mental,slight morning anxiety,3
+c214d3bca2944f282a441d02d38e0eae2ad4f55f4383fc9dd2108bd56291a4e5,94,2025-10-05,back,back stiffness all day in rain,4
+5c49aacd24f421b2500d2f2c0ca57504b22f16daafe2009b79fcff2ad0422687,95,2025-10-20,mental,feeling overwhelmed with work,4
+52c477bcb397a25886834475116362fef68f797c6740048162c1f37a7a8de133,96,2025-11-01,mental,calmer mood after walk,2
+80d3f03ea2f13045494576f3ba022d56ba62fb2d65b956db6735979c6357fc28,97,2025-11-03,back,back stiffness after long meeting,3
+b92e6d17ae223cb90d5af0d8874b79b2840f5b0aaf0d862b5f6cc8cfea34e4ec,98,2025-11-07,mental,mental drain with physical okay,3
+785493525c0a7cea6a431f8083d97b6f192f3ddcb548c79d90064678a40b024c,99,2025-11-09,back,mild back discomfort,2
+0e676e104156378d1d4ae7c0f63e6b7ecf2bb42d9653f309b9f6a2cae15913fb,100,2025-11-13,knee,knee remains pain free,0
+f886e6b2fd0704cf052052060ef98464ffaedbc1409013fc1ae7ba431b9b2e2e,101,2025-11-15,systemic,no significant symptoms reported,0
