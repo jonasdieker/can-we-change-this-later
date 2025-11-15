@@ -91,12 +91,8 @@ def stop_recording_entry():
 
             len_diff = len(patient_record) - len(get_symptoms("data/symptoms_database.csv"))
 
-            start_idx = max(0, len(patient_record) - len_diff)
-            symptoms = symptom_transformer(patient_record[start_idx:], api_key=load_config("config.yaml").get("openai_key"))
-            if start_idx == 0:
-                combined_symptoms = pd.concat([get_symptoms("data/symptoms_database.csv"), symptoms], ignore_index=True)
-            else:
-                combined_symptoms = symptoms
+            symptoms = symptom_transformer(patient_record[-len_diff:], api_key=load_config("config.yaml").get("openai_key"))
+            combined_symptoms = pd.concat([get_symptoms("data/symptoms_database.csv"), symptoms], ignore_index=True)
             write_symptoms("data/symptoms_database.csv", combined_symptoms)
             return jsonify(result), 200
         else:
