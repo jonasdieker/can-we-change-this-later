@@ -1,13 +1,14 @@
 from datetime import datetime
 from pathlib import Path
 
+import pandas as pd
 from flask import Flask, jsonify, request
 
 from backend.services.speech_to_text import SimpleOpenAIWhisper
 from backend.services.summarizer import Summarizer
 from backend.services.symptom_populator import symptom_transformer
 from backend.utils import (get_patient_record, load_config,
-                           write_patient_record, write_symptoms)
+                           write_patient_record, write_symptoms, get_symptoms)
 
 from flask_cors import CORS
 
@@ -89,8 +90,11 @@ def stop_recording_entry():
             patient_record.append(entry)
             write_patient_record("data/recording_database.json", patient_record)
 
-            symptoms = symptom_transformer("data/recording_database.json", api_key=load_config("config.yaml").get("openai_key"))
-            write_symptoms("data/symptoms_database.csv", symptoms)
+            len_diff = len(patient_record) - len(get_symptoms("data/symptoms_database.csv"))
+
+            symptoms = symptom_transformer(patient_record[-len_diff:], api_key=load_config("config.yaml").get("openai_key"))
+            combined_symptoms = pd.concat([get_symptoms("data/symptoms_database.csv"), symptoms], ignore_index=True)
+            write_symptoms("data/symptoms_database.csv", combined_symptoms)
             return jsonify(result), 200
         else:
             return jsonify(result), 400

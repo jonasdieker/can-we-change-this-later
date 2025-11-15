@@ -27,11 +27,12 @@ export async function postJson(url, body) {
 }
 
 export async function hitEndpoint(url, body) {
-  await fetch(url, {
+  const res = await fetch(url, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(body ?? {}),
   });
+  return handleJsonOrText(res, url);
 }
