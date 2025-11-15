@@ -1,7 +1,7 @@
-import { postJson } from './api.js';
+import { postJson, hitEndpoint } from './api.js';
 
 export function startRecordingSummary() {
-  return postJson('/start-recording-summary', {
+  return postJson('http://127.0.0.1:5000/api/start-recording-summary', {
     timestamp: new Date().toISOString(),
   });
 }
@@ -10,7 +10,7 @@ export function startRecordingSummary() {
  * Expects server to return HTML summary string.
  */
 export async function stopRecordingSummary() {
-  const res = await postJson('/stop-recording-summary', {
+  const res = await hitEndpoint('http://127.0.0.1:5000/api/stop-recording-summary', {
     timestamp: new Date().toISOString(),
   });
   return typeof res === 'string' ? res : res.html || '';
@@ -21,7 +21,7 @@ export async function stopRecordingSummary() {
  * Expects server to return HTML summary string.
  */
 export async function sendTextSummary(text) {
-  const res = await postJson('/text-summary', {
+  const res = await postJson('http://127.0.0.1:5000/api/text-summary', {
     instruction: text,
     timestamp: new Date().toISOString(),
   });

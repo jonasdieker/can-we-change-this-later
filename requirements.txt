@@ -1,0 +1,7 @@
+sounddevice
+Flask
+openai
+pandas
+numpy
+pyaml
+flask-cors

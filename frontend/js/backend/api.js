@@ -25,3 +25,13 @@ export async function postJson(url, body) {
   });
   return handleJsonOrText(res, url);
 }
+
+export async function hitEndpoint(url, body) {
+  await fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(body ?? {}),
+  });
+}

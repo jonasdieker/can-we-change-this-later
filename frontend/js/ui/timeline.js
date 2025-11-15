@@ -25,7 +25,12 @@ export function initTimeline(containerId, rows) {
   const agg = new Map();
   for (const row of rows) {
     // Try to get date from various column names, or use recording_id as fallback
-    const date = (row.symptome_date || row.symptom_date || row.recording_id || '').toString().slice(0, 10);
+    const date = (
+  row.recording_date ||
+  row.symptome_date ||
+  row.symptom_date ||
+  ''
+).toString().slice(0, 10);
     const group = row.symptom_group || 'Other';
     const intensity = Number(row.symptome_intensity ?? row.symptom_intensity ?? row.intensity ?? 0) || 0;
     const desc = row.symptome_description || row.symptom_description || '';

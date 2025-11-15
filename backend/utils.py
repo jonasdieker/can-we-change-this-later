@@ -24,4 +24,4 @@ def write_patient_record(file: str, record: list[dict[str, Any]]) -> None:
 
 def write_symptoms(file: str, data: pd.DataFrame) -> None:
     with open(file, "w") as f:
-        json.dump(data.to_csv(), f, indent=4)
+        data.to_csv(file, index=False)

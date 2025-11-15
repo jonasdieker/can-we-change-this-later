@@ -1,4 +1,5 @@
 from datetime import datetime
+from pathlib import Path
 
 from flask import Flask, jsonify, request
 
@@ -8,7 +9,11 @@ from backend.services.symptom_populator import symptom_transformer
 from backend.utils import (get_patient_record, load_config,
                            write_patient_record, write_symptoms)
 
+from flask_cors import CORS
+
 app = Flask(__name__)
+
+CORS(app)
 
 # Global whisper instance
 tts = None
@@ -83,6 +88,9 @@ def stop_recording_entry():
             }
             patient_record.append(entry)
             write_patient_record("data/recording_database.json", patient_record)
+
+            symptoms = symptom_transformer("data/recording_database.json", api_key=load_config("config.yaml").get("openai_key"))
+            write_symptoms("data/symptoms_database.csv", symptoms)
             return jsonify(result), 200
         else:
             return jsonify(result), 400
@@ -97,12 +105,9 @@ def stop_recording_summary():
         result = stt_instance.stop_recording()
         
         if result["status"] == "success":
-            symptoms = symptom_transformer("data/recording_database.json", api_key=load_config("config.yaml").get("openai_key"))
-            print(f"Generated symptoms:\n{symptoms}")
-            write_symptoms("data/symptoms_database.csv", symptoms)
+            assert Path("data/symptoms_database.csv").exists(), "Symptoms database file not found."
             summarizer_instance = get_summarizer()
             result["summary"] = summarizer_instance.summarize(result["transcription"], patient_record=get_patient_record("data/symptoms_database.csv"))
-            print(f"Generated summary:\n{result['summary']}")
             return jsonify(result), 200
         else:
             return jsonify(result), 400

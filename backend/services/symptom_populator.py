@@ -14,16 +14,18 @@ I will upload a JSON file with symptom recordings.
 
 Produce EXACTLY ONE CSV row per recording, with columns:
 
-symptom_id,recording_id,symptom_group,symptom_description,symptom_intensity
+symptom_id,recording_id,recording_date,symptom_group,symptom_description,symptom_intensity
 
 Rules:
 - symptom_id = SHA-256(recording_id + symptom_group + symptom_description)
+- recording_date = ISO 8601 calendar date of the recording (YYYY-MM-DD, no time)
 - symptom_group = 1-word body-region label
 - symptom_description = short summary
-- symptom_intensity = 0–10
+- symptom_intensity = integer from 0 to 10
 
 Return ONLY the CSV inside a fenced code block.
 """
+
 
 
 def extract_csv_from_output(text: str) -> str:
@@ -62,7 +64,8 @@ def symptom_transformer(input_path: str, api_key: str) -> pd.DataFrame:
     df = pd.read_csv(io.StringIO(csv_text))
 
     # Compute symptom_id
-    df["symptom_id"] = df.apply(compute_symptom_id, axis=1)
+    df["symptom_id"] = df.apply(compute_symptom_id, axis=1) 
+    print(df.head())
     return df
 
 if __name__ == "__main__":

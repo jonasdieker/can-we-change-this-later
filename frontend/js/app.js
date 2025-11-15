@@ -11,7 +11,7 @@ async function bootstrap() {
   initSummaryUI();
 
   try {
-    const { rows, text } = await loadCsv('data/symptom_database.csv');
+    const { rows, text } = await loadCsv('../data/symptoms_database.csv');
     setState('csvText', text);
     const csvStatus = document.getElementById('summary-csv-status');
     if (csvStatus) {
