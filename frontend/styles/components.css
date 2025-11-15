@@ -14,20 +14,25 @@
 }
 
 .primary-circle-btn {
-  background: #f5ebdd;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+  color: white;
 }
 
 .primary-circle-btn:hover,
 .secondary-circle-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 16px 32px rgba(120,96,64,0.28);
+  box-shadow: var(--shadow-vibrant);
 }
 
 .primary-circle-btn:active,
 .secondary-circle-btn:active {
   transform: translateY(0);
   box-shadow: var(--shadow-soft);
-  background: #efe3d0;
+  background: var(--primary-dark);
+}
+
+.secondary-circle-btn:active {
+  background: var(--peach);
 }
 
 .circle-btn-icon {
@@ -37,13 +42,14 @@
 
 .circle-btn-label {
   font-size: 0.9rem;
+  font-weight: 500;
 }
 
 /* Voice recording pulse */
 
 .voice-btn.recording {
   animation: pulse 1.6s ease-in-out infinite;
-  background: #efe1cf;
+  background: var(--primary-light);
 }
 
 .voice-btn.recording .walnut-icon {
@@ -51,9 +57,9 @@
 }
 
 @keyframes pulse {
-  0% { box-shadow: 0 0 0 0 rgba(160, 124, 75, 0.4); }
-  70% { box-shadow: 0 0 0 12px rgba(160, 124, 75, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(160, 124, 75, 0); }
+  0% { box-shadow: 0 0 0 0 rgba(240, 146, 0, 0.5); }
+  70% { box-shadow: 0 0 0 16px rgba(240, 146, 0, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(240, 146, 0, 0); }
 }
 
 /* Buttons */
@@ -71,8 +77,15 @@
 }
 
 .primary-btn {
-  background: var(--walnut);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
   color: #fff;
+  font-weight: 500;
+  box-shadow: var(--shadow-soft);
+}
+
+.primary-btn:hover {
+  box-shadow: var(--shadow-vibrant);
+  transform: translateY(-1px);
 }
 
 .ghost-btn {
@@ -209,21 +222,24 @@
 }
 
 .toast-info {
-  background: #4FA8A3;
-  border-color: #97d7d3;
-  color: #f8fffe;
+  background: var(--accent-secondary);
+  border-color: #7EFFF5;
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(78, 205, 196, 0.4);
 }
 
 .toast-success {
-  background: #5d8b52;
-  border-color: #b8dab0;
-  color: #f7fff4;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+  border-color: #FFD699;
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(240, 146, 0, 0.4);
 }
 
 .toast-error {
-  background: #a43f3a;
-  border-color: #f2b0aa;
-  color: #fff7f6;
+  background: var(--accent);
+  border-color: #FFB3D1;
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(255, 107, 157, 0.4);
 }
 
 /* Utility */

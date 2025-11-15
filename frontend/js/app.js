@@ -1,5 +1,5 @@
 import { initTabs } from './ui/tabs.js';
-import { initHomeEntryUI, initSummaryUI } from './ui/speech_ui.js';
+import { initHomeEntryUI, initSummaryUI, initExportPDF, initSendToDoctor } from './ui/speech_ui.js';
 import { initTimeline } from './ui/timeline.js';
 import { loadCsv } from './utils/csv_loader.js';
 import { subscribe, setState } from './state.js';
@@ -9,6 +9,8 @@ async function bootstrap() {
   initTabs();
   initHomeEntryUI();
   initSummaryUI();
+  initExportPDF();
+  initSendToDoctor();
 
   try {
     const { rows, text } = await loadCsv('../data/symptoms_database.csv');

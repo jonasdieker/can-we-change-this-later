@@ -2,3 +2,4 @@ env/
 data/
 config.yaml
 enf_hackathon
+data/symptoms_database.csv

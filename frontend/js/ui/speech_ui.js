@@ -112,3 +112,118 @@ export function initSummaryUI() {
     }
   });
 }
+
+export function initExportPDF() {
+  const exportBtn = document.getElementById('btn-export-pdf');
+  const summaryHtmlEl = document.getElementById('summary-html');
+
+  if (!exportBtn || !summaryHtmlEl) return;
+
+  exportBtn.addEventListener('click', () => {
+    const summaryContent = summaryHtmlEl.innerHTML;
+
+    // Check if there's actual content (not just placeholder)
+    if (!summaryContent || summaryContent.includes('No summary yet')) {
+      showToast('No summary to export. Generate a summary first.', 'error');
+      return;
+    }
+
+    // Create a printable window with the summary
+    const printWindow = window.open('', '_blank');
+    const htmlContent = `
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <title>Walnut Scribe - Medical Summary</title>
+        <style>
+          body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            color: #2D2520;
+            line-height: 1.6;
+          }
+          h1, h2, h3, h4 {
+            color: #F09200;
+            margin-top: 1.5em;
+          }
+          h1 { font-size: 24px; border-bottom: 2px solid #F09200; padding-bottom: 10px; }
+          h2 { font-size: 20px; }
+          h3 { font-size: 18px; }
+          p { margin: 1em 0; }
+          ul, ol { margin: 1em 0; padding-left: 2em; }
+          table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+          th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+          th { background-color: #FFF9F0; color: #F09200; font-weight: 600; }
+          .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #F09200;
+          }
+          .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            font-size: 12px;
+            color: #8B7355;
+            text-align: center;
+          }
+          @media print {
+            body { margin: 0; padding: 20px; }
+          }
+        </style>
+      </head>
+      <body>
+        <div class="header">
+          <h1>Walnut Scribe</h1>
+          <p style="color: #8B7355; font-size: 14px;">Medical Symptom Summary</p>
+          <p style="font-size: 12px; color: #8B7355;">Generated: ${new Date().toLocaleString()}</p>
+        </div>
+        ${summaryContent}
+        <div class="footer">
+          <p>Generated with Walnut Scribe - A warm, clinical diary for your symptoms</p>
+        </div>
+      </body>
+      </html>
+    `;
+
+    printWindow.document.write(htmlContent);
+    printWindow.document.close();
+
+    // Wait for content to load, then trigger print dialog
+    printWindow.onload = () => {
+      printWindow.print();
+    };
+
+    showToast('Opening print dialog for PDF export...', 'info', 2500);
+  });
+}
+
+export function initSendToDoctor() {
+  const sendBtn = document.getElementById('btn-send-doctor');
+  const summaryHtmlEl = document.getElementById('summary-html');
+
+  if (!sendBtn || !summaryHtmlEl) return;
+
+  sendBtn.addEventListener('click', () => {
+    const summaryContent = summaryHtmlEl.innerHTML;
+
+    // Check if there's actual content (not just placeholder)
+    if (!summaryContent || summaryContent.includes('No summary yet')) {
+      showToast('No summary to send. Generate a summary first.', 'error');
+      return;
+    }
+
+    // Placeholder: This feature is not yet implemented
+    showToast('Send to Doctor feature coming soon!', 'info', 3000);
+
+    // TODO: Implement email or secure messaging integration
+    // Could integrate with:
+    // - Email (mailto: link with summary)
+    // - FHIR API for EHR integration
+    // - Secure messaging service
+    // - Practice management system API
+  });
+}

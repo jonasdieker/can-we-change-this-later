@@ -1,4 +1,4 @@
-// Timeline grid using Plotly scatter squares.
+// Timeline grid using Plotly scatter circles.
 
 import { setState } from '../state.js';
 import { formatDate, formatIntensity } from '../utils/formatter.js';
@@ -59,15 +59,15 @@ export function initTimeline(containerId, rows) {
   // Get unique symptom groups and assign each a distinct color
   const uniqueGroups = [...new Set(points.map(p => p.group))];
   const groupColors = {
-    // Define color palette for different symptom groups
-    0: { r: 160, g: 124, b: 75 },   // Walnut brown
-    1: { r: 79, g: 168, b: 163 },   // Teal
-    2: { r: 206, g: 140, b: 94 },   // Warm orange
-    3: { r: 93, g: 139, b: 82 },    // Green
-    4: { r: 164, g: 63, b: 58 },    // Warm red
-    5: { r: 120, g: 105, b: 160 },  // Purple
-    6: { r: 180, g: 150, b: 50 },   // Gold
-    7: { r: 75, g: 130, b: 150 },   // Blue-gray
+    // Define vibrant color palette for different symptom groups
+    0: { r: 240, g: 146, b: 0 },    // Primary orange
+    1: { r: 255, g: 107, b: 157 },  // Pink accent
+    2: { r: 78, g: 205, b: 196 },   // Turquoise
+    3: { r: 255, g: 179, b: 71 },   // Light orange
+    4: { r: 255, g: 87, b: 87 },    // Coral red
+    5: { r: 135, g: 206, b: 250 },  // Sky blue
+    6: { r: 255, g: 200, b: 87 },   // Golden yellow
+    7: { r: 147, g: 112, b: 219 },  // Medium purple
   };
 
   const groupToColor = new Map();
@@ -112,12 +112,12 @@ export function initTimeline(containerId, rows) {
         color: lineColorStr,
       },
       marker: {
-        symbol: 'square',
+        symbol: 'circle',
         size: sizes,
         color: colorStr,
         line: {
-          width: 1.6,
-          color: 'rgba(90, 78, 64, 0.5)',
+          width: 2,
+          color: 'rgba(255, 255, 255, 0.8)',
         },
       },
       hovertemplate:
@@ -126,22 +126,32 @@ export function initTimeline(containerId, rows) {
   });
 
   const layout = {
-    margin: { l: 80, r: 10, t: 10, b: 30 },
+    margin: { l: 100, r: 10, t: 10, b: 40 },
     xaxis: {
       title: '',
       type: 'date',
       tickformat: '%b %d',
-      gridcolor: 'rgba(214,206,194,0.5)',
+      gridcolor: 'rgba(255, 217, 179, 0.4)',
       zeroline: false,
+      tickfont: {
+        size: 13,
+        color: '#2D2520',
+        family: 'Nunito, sans-serif',
+      },
     },
     yaxis: {
       title: '',
       type: 'category',
-      gridcolor: 'rgba(214,206,194,0.5)',
+      gridcolor: 'rgba(255, 217, 179, 0.4)',
       zeroline: false,
+      tickfont: {
+        size: 13,
+        color: '#2D2520',
+        family: 'Nunito, sans-serif',
+      },
     },
-    paper_bgcolor: '#FFFDF8',
-    plot_bgcolor: '#FFFDF8',
+    paper_bgcolor: '#FFFCF7',
+    plot_bgcolor: '#FFFCF7',
     hovermode: 'closest',
     showlegend: false,
   };

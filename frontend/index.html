@@ -21,8 +21,8 @@
     <header class="app-header">
       <div class="header-main">
         <div class="header-title-group">
-          <h1 class="app-title">Walnut Scribe</h1>
-          <p class="app-subtitle">A warm, clinical diary for your symptoms</p>
+          <h1 class="app-title">Walnut</h1>
+          <p class="app-subtitle">Smart Health Memory</p>
         </div>
       </div>
     </header>
@@ -32,9 +32,6 @@
       <section id="tab-home" class="tab-panel active">
         <div class="home-hero">
           <img src="assets/icons/walnut.svg" alt="Walnut Scribe mascot" class="walnut-hero" />
-          <p class="hero-text">
-            Capture how you feel today. Walnut Scribe quietly collects your entries into a structured diary.
-          </p>
         </div>
         <div class="home-actions">
           <button id="btn-entry-voice" class="primary-circle-btn voice-btn">
@@ -46,18 +43,12 @@
             <span class="circle-btn-label">Text entry</span>
           </button>
         </div>
-        <p class="home-hint">
-          Voice entries will be transcribed and added to your symptom CSV in the background.
-        </p>
       </section>
 
       <!-- Timeline Tab -->
       <section id="tab-timeline" class="tab-panel">
         <header class="panel-header">
           <h2>Timeline</h2>
-          <p class="panel-description">
-            A grid of your symptoms over time. Each square is a day and symptom group; opacity reflects intensity.
-          </p>
         </header>
         <div id="timeline-chart" class="timeline-chart"></div>
         <div class="timeline-spacer"></div>
@@ -100,9 +91,6 @@
             <img src="assets/icons/walnut.svg" alt="Walnut Scribe mini" class="walnut-mini" />
             <div>
               <h2>Summary</h2>
-              <p class="panel-description">
-                Give Walnut Scribe a brief instruction. It will return a structured HTML summary for your doctor.
-              </p>
             </div>
           </div>
         </header>
@@ -113,11 +101,11 @@
         <span id="summary-csv-status" class="hidden"></span>
 
         <div class="summary-actions-row">
-          <button id="btn-summary-voice" class="secondary-circle-btn voice-btn">
+          <button id="btn-summary-voice" class="primary-circle-btn voice-btn">
             <img src="assets/icons/walnut.svg" alt="Record summary instruction" class="circle-btn-icon walnut-icon" />
             <span class="circle-btn-label">Voice instruction</span>
           </button>
-          <button id="btn-summary-text" class="secondary-circle-btn text-btn">
+          <button id="btn-summary-text" class="primary-circle-btn text-btn">
             <img src="assets/icons/book.svg" alt="Typed summary instruction" class="circle-btn-icon" />
             <span class="circle-btn-label">Text instruction</span>
           </button>
@@ -128,6 +116,24 @@
             <p class="placeholder">No summary yet. Record or type an instruction to generate one.</p>
           </div>
         </section>
+
+        <div class="export-actions">
+          <button id="btn-export-pdf" class="btn primary-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            Export PDF
+          </button>
+          <button id="btn-send-doctor" class="btn primary-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 2L11 13"/>
+              <path d="M22 2l-7 20-4-9-9-4 20-7z"/>
+            </svg>
+            Send to Doctor
+          </button>
+        </div>
       </section>
     </main>
 
@@ -137,19 +143,16 @@
         <div class="nav-circle-icon nav-home">
           <img src="assets/icons/home.svg" alt="Home" />
         </div>
-        <span class="nav-label">Home</span>
       </button>
       <button class="nav-circle-btn" data-tab-target="timeline">
         <div class="nav-circle-icon nav-timeline">
           <img src="assets/icons/timeline.svg" alt="Timeline" />
         </div>
-        <span class="nav-label">Timeline</span>
       </button>
       <button class="nav-circle-btn" data-tab-target="summary">
         <div class="nav-circle-icon nav-summary">
           <img src="assets/icons/summary.svg" alt="Summary" />
         </div>
-        <span class="nav-label">Summary</span>
       </button>
     </nav>
   </div>
