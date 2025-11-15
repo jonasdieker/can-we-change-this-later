@@ -18,14 +18,24 @@ export function initTimeline(containerId, rows) {
     return;
   }
 
-  // Aggregate by (date, group) with max intensity.
+  // Aggregate by (date/recording_id, group) with max intensity.
+  console.log('Timeline rows:', rows);
+  console.log('First row sample:', rows[0]);
+
   const agg = new Map();
   for (const row of rows) {
-    const date = (row.symptome_date || row.symptom_date || '').slice(0, 10);
+    // Try to get date from various column names, or use recording_id as fallback
+    const date = (row.symptome_date || row.symptom_date || row.recording_id || '').toString().slice(0, 10);
     const group = row.symptom_group || 'Other';
-    if (!date || !group) continue;
-    const intensity = Number(row.symptome_intensity ?? row.intensity ?? 0) || 0;
+    const intensity = Number(row.symptome_intensity ?? row.symptom_intensity ?? row.intensity ?? 0) || 0;
     const desc = row.symptome_description || row.symptom_description || '';
+
+    console.log('Processing row:', { date, group, intensity, desc });
+
+    if (!date || !group) {
+      console.log('Skipping row - missing date or group:', { date, group });
+      continue;
+    }
     const key = `${date}__${group}`;
     const existing = agg.get(key);
     if (!existing || intensity > existing.intensity) {
@@ -34,6 +44,8 @@ export function initTimeline(containerId, rows) {
   }
 
   const points = Array.from(agg.values());
+  console.log('Aggregated points:', points);
+
   if (!points.length) {
     container.innerHTML = '<p class="placeholder">No symptom data to display.</p>';
     return;
@@ -89,7 +101,7 @@ export function initTimeline(containerId, rows) {
       x,
       y,
       text: intensities,
-      customdata: groupPoints.map(p => [p.description]),
+      customdata: groupPoints.map(p => [p.description, p.intensity, p.date]),
       line: {
         width: 2,
         color: lineColorStr,
@@ -142,9 +154,14 @@ export function initTimeline(containerId, rows) {
     if (!point) return;
     const date = point.x;
     const group = point.y;
-    const match = points.find((p) => p.date === date && p.group === group);
-    if (!match) return;
-    updateDetails(match);
+    const [description, intensity] = point.customdata || [];
+
+    if (!description) {
+      console.log('No customdata found for point:', point);
+      return;
+    }
+
+    updateDetails({ date, group, intensity, description });
     setState('selectedSymptomGroup', group);
     showToast(`Selected group: ${group}`, 'info', 2200);
   });

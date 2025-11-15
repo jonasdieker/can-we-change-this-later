@@ -11,11 +11,11 @@ async function bootstrap() {
   initSummaryUI();
 
   try {
-    const { rows, text } = await loadCsv('data/symptome_db.csv');
+    const { rows, text } = await loadCsv('data/symptom_database.csv');
     setState('csvText', text);
     const csvStatus = document.getElementById('summary-csv-status');
     if (csvStatus) {
-      csvStatus.textContent = `Loaded ${rows.length} records from symptome_db.csv`;
+      csvStatus.textContent = `Loaded ${rows.length} records from symptom_database.csv`;
     }
     initTimeline('timeline-chart', rows);
   } catch (err) {
