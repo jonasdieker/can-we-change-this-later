@@ -1,0 +1,9 @@
+symptome_id,record_id,record_time,symptome_date,symptom_group,symptome_description,symptome_intensity
+1,101,2025-11-10T08:30:00,2025-11-10,Headache,Pulsing headache around temples after long screen time,5
+2,102,2025-11-10T21:15:00,2025-11-10,Sleep,Needed over an hour to fall asleep and woke up twice at night,4
+3,103,2025-11-10T07:50:00,2025-11-11,Headache,Mild tension headache in the morning,3
+4,104,2025-11-11T18:05:00,2025-11-11,Fatigue,Felt exhausted after short walk,7
+5,105,2025-11-12T09:10:00,2025-11-12,Stomach,Light nausea before breakfast,2
+6,106,2025-11-12T16:40:00,2025-11-12,Mood,Felt unusually irritable during work meeting,6
+7,107,2025-11-13T08:20:00,2025-11-13,Headache,Strong migraine-like headache with light sensitivity,8
+8,108,2025-11-13T22:05:00,2025-11-13,Sleep,Woke up multiple times with racing thoughts,6
