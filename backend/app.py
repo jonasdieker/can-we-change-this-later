@@ -1,10 +1,12 @@
+from datetime import datetime
+
 from flask import Flask, jsonify, request
 
 from backend.services.speech_to_text import SimpleOpenAIWhisper
 from backend.services.summarizer import Summarizer
-from backend.services.symptom_transformer import symptom_transformer
-from backend.utils import (get_patient_record, write_patient_record,
-                           write_symptoms)
+from backend.services.symptom_populator import symptom_transformer
+from backend.utils import (get_patient_record, load_config,
+                           write_patient_record, write_symptoms)
 
 app = Flask(__name__)
 
@@ -22,16 +24,6 @@ def get_stt_instance():
         except Exception as e:
             raise Exception(f"Failed to initialize Whisper: {str(e)}")
     return tts
-
-def get_symptom_transformer():
-    """Get or create symptom transformer instance."""
-    global symptom_transformer_instance
-    if symptom_transformer_instance is None:
-        try:
-            symptom_transformer_instance = symptom_transformer()
-        except Exception as e:
-            raise Exception(f"Failed to initialize Symptom Transformer: {str(e)}")
-    return symptom_transformer_instance
 
 def get_summarizer():
     """Get or create summarizer instance."""
@@ -81,13 +73,16 @@ def stop_recording_entry():
     try:
         stt_instance = get_stt_instance()
         result = stt_instance.stop_recording()
-
-        patient_id = request.args.get("patient_id", "patient_123")  # Example patient ID
         
         if result["status"] == "success":
-            patient_record = get_patient_record("data/patient_data.json", patient_id)
-            patient_record.append(result["transcription"])
-            write_patient_record("data/patient_data.json", patient_id, patient_record)
+            patient_record = get_patient_record("data/recording_database.json")
+            entry = {
+                "entry_id": patient_record[-1]["entry_id"] + 1 if patient_record else 1,
+                "recording_date": datetime.now().isoformat(),
+                "transcription": result["transcription"]
+            }
+            patient_record.append(entry)
+            write_patient_record("data/recording_database.json", patient_record)
             return jsonify(result), 200
         else:
             return jsonify(result), 400
@@ -102,11 +97,12 @@ def stop_recording_summary():
         result = stt_instance.stop_recording()
         
         if result["status"] == "success":
-            symptom_transformer_instance = get_symptom_transformer()
-            write_symptoms("data/patient_data.json", symptom_transformer_instance)
+            symptoms = symptom_transformer("data/recording_database.json", api_key=load_config("config.yaml").get("openai_key"))
+            print(f"Generated symptoms:\n{symptoms}")
+            write_symptoms("data/symptoms_database.csv", symptoms)
             summarizer_instance = get_summarizer()
-            summary = summarizer_instance.summarize(result["transcription"], patient_record=get_patient_record("data/patient_data.json"))
-            result["summary"] = summary
+            result["summary"] = summarizer_instance.summarize(result["transcription"], patient_record=get_patient_record("data/symptoms_database.csv"))
+            print(f"Generated summary:\n{result['summary']}")
             return jsonify(result), 200
         else:
             return jsonify(result), 400
@@ -117,11 +113,14 @@ def stop_recording_summary():
 def text_summary():
     """A placeholder endpoint for symptom transformation."""
     try:
-        symptoms = symptom_transformer()
-        return jsonify({
-            "status": "success",
-            "symptoms": symptoms
-        }), 200
+        text = request.args.get('text', '')
+        if not text:
+            return jsonify({"status": "error", "message": "No text provided"}), 400
+        symptoms = symptom_transformer("data/recording_database.json", api_key=load_config("config.yaml").get("openai_key"))
+        write_symptoms("data/symptoms.csv", symptoms)
+        summarizer_instance = get_summarizer()
+        summary = summarizer_instance.summarize(text, patient_record=get_patient_record("data/symptoms.csv"))
+        return jsonify({"status": "success", "summary": summary}), 200
 
     except Exception as e:
         return jsonify({"status": "error", "message": str(e)}), 500

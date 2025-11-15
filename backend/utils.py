@@ -1,6 +1,7 @@
 import json
 from typing import Any
 
+import pandas as pd
 import yaml
 
 
@@ -21,8 +22,6 @@ def write_patient_record(file: str, record: list[dict[str, Any]]) -> None:
         json.dump(data, f, indent=4)
 
 
-def write_symptoms(file: str, patient_id: str, summary: str) -> None:
-    data = json.load(open(file))
-    data[patient_id]['symptoms'] = summary
+def write_symptoms(file: str, data: pd.DataFrame) -> None:
     with open(file, "w") as f:
-        json.dump(data, f, indent=4)
+        json.dump(data.to_csv(), f, indent=4)
