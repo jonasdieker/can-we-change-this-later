@@ -5,13 +5,9 @@ from typing import Any, Dict, Optional
 import numpy as np
 import openai
 import sounddevice as sd
-import yaml
 
+from backend.utils import load_config
 
-def load_config(config_path: str) -> Dict[str, Any]:
-    with open(config_path, "r") as f:
-        return yaml.safe_load(f)
-    
 
 def record_wav_bytesio(duration: float, samplerate: int = 16000, channels: int = 1) -> io.BytesIO:
     # Record (sounddevice commonly returns float32 in -1..1)
