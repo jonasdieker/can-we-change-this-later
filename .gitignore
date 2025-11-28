@@ -3,3 +3,6 @@ data/
 config.yaml
 enf_hackathon
 data/symptoms_database.csv
+test_api_key.py
+test_api_key_2.py
+.vscode/

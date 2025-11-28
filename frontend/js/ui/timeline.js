@@ -19,8 +19,7 @@ export function initTimeline(containerId, rows) {
   }
 
   // Aggregate by (date/recording_id, group) with max intensity.
-  console.log('Timeline rows:', rows);
-  console.log('First row sample:', rows[0]);
+
 
   const agg = new Map();
   for (const row of rows) {
@@ -35,8 +34,6 @@ export function initTimeline(containerId, rows) {
     const intensity = Number(row.symptome_intensity ?? row.symptom_intensity ?? row.intensity ?? 0) || 0;
     const desc = row.symptome_description || row.symptom_description || '';
 
-    console.log('Processing row:', { date, group, intensity, desc });
-
     if (!date || !group) {
       console.log('Skipping row - missing date or group:', { date, group });
       continue;
@@ -49,7 +46,7 @@ export function initTimeline(containerId, rows) {
   }
 
   const points = Array.from(agg.values());
-  console.log('Aggregated points:', points);
+
 
   if (!points.length) {
     container.innerHTML = '<p class="placeholder">No symptom data to display.</p>';

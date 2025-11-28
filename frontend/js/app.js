@@ -4,6 +4,7 @@ import { initTimeline } from './ui/timeline.js';
 import { loadCsv } from './utils/csv_loader.js';
 import { subscribe, setState } from './state.js';
 import { showToast } from './ui/notifications.js';
+import { initEntryChatOverlay } from './ui/entry_chat.js';
 
 async function bootstrap() {
   initTabs();
@@ -11,9 +12,10 @@ async function bootstrap() {
   initSummaryUI();
   initExportPDF();
   initSendToDoctor();
+  initEntryChatOverlay();
 
   try {
-    const { rows, text } = await loadCsv('../data/symptoms_database.csv');
+    const { rows, text } = await loadCsv('http://127.0.0.1:5000/api/symptoms-csv');
     setState('csvText', text);
     const csvStatus = document.getElementById('summary-csv-status');
     if (csvStatus) {

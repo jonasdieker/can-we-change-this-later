@@ -32,6 +32,18 @@
       <section id="tab-home" class="tab-panel active">
         <div class="home-hero">
           <img src="assets/icons/walnut.svg" alt="Walnut Scribe mascot" class="walnut-hero" />
+
+          <!-- Entry Chat Overlay (hidden by default) -->
+          <div id="entry-chat-overlay" class="entry-chat-overlay hidden">
+            <div class="entry-chat-header">
+              <img src="assets/icons/walnut.svg" alt="Walnut" class="entry-chat-icon" />
+              <h3 class="entry-chat-title">Entry Recorded</h3>
+              <button id="entry-chat-close" class="entry-chat-close" aria-label="Close">&times;</button>
+            </div>
+            <div id="entry-chat-response" class="entry-chat-response">
+              <!-- Response text will be inserted here -->
+            </div>
+          </div>
         </div>
         <div class="home-actions">
           <button id="btn-entry-voice" class="primary-circle-btn voice-btn">

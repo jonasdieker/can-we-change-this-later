@@ -1,3 +1,4 @@
+
 from datetime import datetime
 from pathlib import Path
 
@@ -13,7 +14,7 @@ from backend.utils import (get_patient_record, get_symptoms, load_config,
 
 app = Flask(__name__)
 
-CORS(app, origins=["http://127.0.0.1:5500"])
+CORS(app, origins=["http://127.0.0.1:5500", "http://localhost:8000", "http://127.0.0.1:8000"])
 
 # Global whisper instance
 tts = None
@@ -121,6 +122,22 @@ def stop_recording_summary():
         print(result)
         return jsonify({"status": "error", "message": str(e)}), 500
     
+@app.route('/api/symptoms-csv', methods=['GET'])
+def get_symptoms_csv():
+    """Return the symptoms CSV file."""
+    try:
+        import os
+        csv_path = "data/symptoms_database.csv"
+        if os.path.exists(csv_path):
+            with open(csv_path, 'r') as f:
+                csv_content = f.read()
+            from flask import Response
+            return Response(csv_content, mimetype='text/csv'), 200
+        else:
+            return jsonify({"status": "error", "message": "CSV file not found"}), 404
+    except Exception as e:
+        return jsonify({"status": "error", "message": str(e)}), 500
+
 @app.route('/api/text-summary', methods=['GET'])
 def text_summary():
     """A placeholder endpoint for symptom transformation."""

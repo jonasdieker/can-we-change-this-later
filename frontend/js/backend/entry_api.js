@@ -6,7 +6,7 @@ export function startRecordingEntry() {
   });
 }
 
-export function stopRecordingEntry() {
+export async function stopRecordingEntry() {
   return hitEndpoint('http://127.0.0.1:5000/api/stop-recording-entry', {
     timestamp: new Date().toISOString(),
   });

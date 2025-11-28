@@ -5,6 +5,9 @@ import { startRecordingEntry, stopRecordingEntry, sendTextEntry } from '../backe
 import { startRecordingSummary, stopRecordingSummary, sendTextSummary } from '../backend/summary_api.js';
 import { setState } from '../state.js';
 import { showToast } from './notifications.js';
+import { showEntryChatOverlay } from './entry_chat.js';
+import { loadCsv } from '../utils/csv_loader.js';
+import { initTimeline } from './timeline.js';
 
 export function initHomeEntryUI() {
   const voiceBtn = document.getElementById('btn-entry-voice');
@@ -24,13 +27,51 @@ export function initHomeEntryUI() {
       } else {
         recordingEntry = false;
         voiceBtn.classList.remove('recording');
-        await stopRecordingEntry();
-        showToast('Entry recorded.', 'success');
+        voiceBtn.classList.add('processing');
+        voiceBtn.disabled = true;
+        showToast('Processing entry…', 'info');
+
+        try {
+          const result = await stopRecordingEntry();
+          voiceBtn.classList.remove('processing');
+          voiceBtn.disabled = false;
+          showToast('Entry recorded.', 'success');
+
+          // Show chat overlay with transcription
+          const transcription = result?.transcription || result?.text || 'Entry recorded successfully';
+          showEntryChatOverlay(transcription);
+
+          // Automatically reload timeline data without full page refresh
+          console.log('Reloading timeline data...');
+          setTimeout(async () => {
+            try {
+              console.log('Fetching CSV from backend...');
+              const { rows, text } = await loadCsv('http://127.0.0.1:5000/api/symptoms-csv');
+              console.log('CSV loaded, rows count:', rows.length);
+              console.log('First few rows:', rows.slice(0, 3));
+              setState('csvText', text);
+              console.log('Reinitializing timeline...');
+              initTimeline('timeline-chart', rows);
+              console.log('Timeline reloaded with new data');
+              showToast('Timeline updated!', 'info');
+            } catch (err) {
+              console.error('Failed to reload timeline:', err);
+              console.error('Error details:', err.message, err.stack);
+            }
+          }, 3000); // Wait 3 seconds for backend to finish saving
+        } catch (stopErr) {
+          console.error('Error stopping recording:', stopErr);
+          voiceBtn.classList.remove('processing');
+          voiceBtn.disabled = false;
+          showToast('Error processing entry.', 'error');
+        }
       }
     } catch (err) {
-      console.error(err);
+      console.error('Voice entry error:', err);
+      console.error('Error stack:', err.stack);
       recordingEntry = false;
-      voiceBtn.classList.remove('recording');
+      voiceBtn.classList.remove('recording', 'processing');
+      voiceBtn.disabled = false;
       showToast('Could not record entry.', 'error');
     }
   });
@@ -44,8 +85,24 @@ export function initHomeEntryUI() {
     });
     if (action !== 'send' || !text) return;
     try {
+      showToast('Processing entry…', 'info');
       await sendTextEntry(text);
       showToast('Entry submitted.', 'success');
+
+      // Show chat overlay with the entered text
+      showEntryChatOverlay(text);
+
+      // Automatically reload timeline data
+      setTimeout(async () => {
+        try {
+          const { rows, text: csvText } = await loadCsv('http://127.0.0.1:5000/api/symptoms-csv');
+          setState('csvText', csvText);
+          initTimeline('timeline-chart', rows);
+          console.log('Timeline reloaded with new data');
+        } catch (err) {
+          console.error('Failed to reload timeline:', err);
+        }
+      }, 2000);
     } catch (err) {
       console.error(err);
       showToast('Could not submit entry.', 'error');
@@ -73,7 +130,12 @@ export function initSummaryUI() {
       } else {
         recordingSummary = false;
         voiceBtn.classList.remove('recording');
+        voiceBtn.classList.add('processing');
+        voiceBtn.disabled = true;
+        showToast('Generating summary…', 'info');
         const html = await stopRecordingSummary();
+        voiceBtn.classList.remove('processing');
+        voiceBtn.disabled = false;
         summaryHtmlEl.innerHTML = html || '<p class="placeholder">No summary returned.</p>';
         setState('summaryHtml', html);
         setState('latestSummaryInstruction', '(recorded instruction)');
@@ -84,7 +146,8 @@ export function initSummaryUI() {
     } catch (err) {
       console.error(err);
       recordingSummary = false;
-      voiceBtn.classList.remove('recording');
+      voiceBtn.classList.remove('recording', 'processing');
+      voiceBtn.disabled = false;
       showToast('Could not process summary recording.', 'error');
     }
   });
@@ -99,6 +162,7 @@ export function initSummaryUI() {
     if (action !== 'send' || !text) return;
 
     try {
+      showToast('Generating summary…', 'info');
       const html = await sendTextSummary(text);
       summaryHtmlEl.innerHTML = html || '<p class="placeholder">No summary returned.</p>';
       setState('summaryHtml', html);
